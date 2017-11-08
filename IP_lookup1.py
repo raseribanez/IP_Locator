@@ -1,11 +1,15 @@
-# Ben Woodfield
+# Author:      Ben Woodfield
+# Description: IP Lookup
 
 import geoip2.database
 
 # Country
 def country_lookup():
     users_ip_address = raw_input("Enter the ip address : ")
-    reader = geoip2.database.Reader('database/City_2017/GeoLite2-City.mmdb')
+    
+    # Enter YOUR filepath/filename.mmdb below - the database file was too large to upload to github 
+    reader = geoip2.database.Reader('GeoLite2-City.mmdb')
+    
     #response = reader.city('209.85.202.94')
     response = reader.city(users_ip_address)
     print("Ben Woodfield - IP Lookup - COUNTRY & CITY DETAILS")
@@ -32,12 +36,3 @@ def country_lookup():
 
 country_lookup()
     
-#def city_lookup():
-#    reader = geoip2.database.Reader('database/City_2017/GeoLite2-City.mmdb')
-#    response = reader.city('209.85.202.94')
-    
-#print(response.city.name)
-#print(response.postal.code)
-#print(response.location.lattitude)
-#print(response.location.logitude)
-
